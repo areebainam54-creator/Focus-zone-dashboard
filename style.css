@@ -1,0 +1,401 @@
+
+:root {
+    --background: #f5f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #7b8497;
+    --border: #e7eaf0;
+    --primary: #5b5ce2;
+    --primary-dark: #4748c9;
+    --success: #35a66f;
+    --danger: #e05252;
+    --shadow: 0 15px 40px rgba(30, 40, 70, 0.08);
+    --radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+.dashboard {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 25px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.small-title {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.header h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.clock-box {
+    background: var(--card);
+    padding: 18px 24px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    min-width: 180px;
+}
+
+.clock-box span {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.clock-box small {
+    color: var(--muted);
+    display: block;
+    margin-top: 5px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    min-height: 430px;
+}
+
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-header > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-header h2 {
+    font-size: 20px;
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #eef0ff;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.task-count,
+.timer-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--muted);
+}
+
+
+/* =========================
+   TODO FORM
+========================= */
+
+.todo-form {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-form input {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 14px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.todo-form input:focus {
+    border-color: var(--primary);
+}
+
+.todo-form button {
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 0 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.todo-form button:hover {
+    background: var(--primary-dark);
+}
+
+.todo-form button:disabled,
+.todo-form input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    height: 25px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--danger);
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+.task-list {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-check {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    accent-color: var(--success);
+}
+
+.task-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+}
+
+.delete-btn:hover {
+    color: var(--danger);
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 10px solid #eef0ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.timer-circle span {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.timer-circle small {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.timer-controls button {
+    padding: 11px 22px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-btn {
+    background: white;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    background: #f5f6fa;
+}
+
+#timerStatus {
+    color: var(--muted);
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 750px) {
+
+    .dashboard {
+        padding-top: 25px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .clock-box {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .dashboard {
+        width: 94%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .todo-form button {
+        padding: 12px;
+    }
+
+    .timer-circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .timer-circle span {
+        font-size: 38px;
+    }
+}

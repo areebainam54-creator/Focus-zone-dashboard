@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Zone | Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="dashboard">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <p class="small-title">FOCUS ZONE</p>
+                <h1 id="greeting">Good Morning</h1>
+                <p class="subtitle">Stay focused. Get things done.</p>
+            </div>
+
+            <div class="clock-box">
+                <span id="clock">00:00:00</span>
+                <small id="date">Loading...</small>
+            </div>
+        </header>
+
+        <!-- Main Cards -->
+        <section class="cards">
+
+            <!-- Todo Card -->
+            <article class="card todo-card">
+                <div class="card-header">
+                    <div>
+                        <span class="icon">✓</span>
+                        <h2>Today's Tasks</h2>
+                    </div>
+
+                    <span class="task-count" id="taskCount">0 / 3</span>
+                </div>
+
+                <form id="todoForm" class="todo-form">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What needs to be done?"
+                        maxlength="80"
+                        autocomplete="off"
+                    >
+                    <button type="submit">Add</button>
+                </form>
+
+                <p id="taskMessage" class="message"></p>
+
+                <ul id="taskList" class="task-list"></ul>
+            </article>
+
+
+            <!-- Pomodoro Card -->
+            <article class="card timer-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="icon">◷</span>
+                        <h2>Focus Timer</h2>
+                    </div>
+
+                    <span class="timer-label">30 MIN</span>
+                </div>
+
+                <div class="timer-content">
+                    <div class="timer-circle">
+                        <span id="timer">30:00</span>
+                        <small>FOCUS</small>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="startBtn" class="primary-btn">Start</button>
+                        <button id="pauseBtn" class="secondary-btn">Pause</button>
+                        <button id="resetBtn" class="secondary-btn">Reset</button>
+                    </div>
+
+                    <p id="timerStatus">Ready to focus?</p>
+                </div>
+
+            </article>
+
+        </section>
+
+        <footer>
+            <p>Focus Zone • Simple productivity, better focus.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
